@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by anonymous (http://jsbin.com/vudorodudo/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+  
+<html><br><head>  
+<meta charset=utf-8 />  
+<title>JS DOM paragraph style</title>
+  <link href='http://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+  <script type="text/javascript">
+    window.onload =function()
+    {
+        document.querySelector('#jsstyle').addEventListener('click',function(){
+        const paragraph=document.querySelector('#text');
+        paragraph.style.color ="red";
+        paragraph.style.fontFamily="Aguafina Script";
+        paragraph.style.fontSize="40px";
+      })
+    }
+  </script>
+<style id="jsbin-css">
+nav
+{
+  width:100%;
+  background-color:green;
+  color:white;
+  height:15px;
+}
+
+nav > ul
+{
+  list-style:none;
+  background-color:green;
+  margin:0;
+}
+
+nav > ul > li
+{
+  position:relative;
+ display:inline-block;
+ margin:25px 0px 0px 35px;
+}
+
+nav > ul > li:hover
+{
+  color:yellow;
+  cursor:pointer;
+}
+
+nav > ul > li:hover .sub
+{
+  display:block;
+  
+}
+.sub
+{
+  display:none;
+  position:absolute;
+  top:18px;
+  left:-20px;
+  background-color:green;
+  list-style:none;
+  margin:0;
+  padding:0;
+  color:white;
+}
+nav > ul > li:hover > .sub > li:hover
+{
+ color:yellow;
+}
+
+.sub > li
+{
+  padding:10px;
+}
+</style>
+</head>   
+<body>  
+<p id ='text'>JavaScript Exercises - w3resource</p>   
+<div>  
+<button id="jsstyle">Style</button>  
+</div>  
+</body>  
+</html> 
+</html>

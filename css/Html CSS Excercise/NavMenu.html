@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by anonymous (http://jsbin.com/kexajonegi/23/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+nav
+{
+  width:100%;
+  background-color:green;
+  color:white;
+  height:15px;
+}
+
+nav > ul
+{
+  list-style:none;
+  background-color:green;
+  margin:0;
+}
+
+nav > ul > li
+{
+  position:relative;
+ display:inline-block;
+ margin:25px 0px 0px 35px;
+}
+
+nav > ul > li:hover
+{
+  color:yellow;
+  cursor:pointer;
+}
+
+nav > ul > li:hover .sub
+{
+  display:block;
+  
+}
+.sub
+{
+  display:none;
+  position:absolute;
+  top:18px;
+  left:-20px;
+  background-color:green;
+  list-style:none;
+  margin:0;
+  padding:0;
+  color:white;
+}
+nav > ul > li:hover > .sub > li:hover
+{
+ color:yellow;
+}
+
+.sub > li
+{
+  padding:10px;
+}
+</style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About 
+        <ul class="sub">
+          <li>Engineering</li>
+          <li>Arts</li>
+          <li>Medical</li>
+          <li>Telecom</li>
+          <li>Science</li>
+        </ul>
+      </li>
+      <li>Service</li>
+      <li>Contact</li>
+    </ul>
+  <nav>
+</body>
+</html>

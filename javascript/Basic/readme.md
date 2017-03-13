@@ -105,7 +105,7 @@ function timeconvert(time)
   </script>
 ```
 * textContent called on the queryselecotor will return the text contents.
-* Slice method is used to cut the string. 
+* The slice() method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
 
 6) Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar
 
@@ -173,7 +173,7 @@ window.onload = function()
 * The date function will take parameters in multiple string/int formate check MDN/W3 site.
 * The toDateString() method return the date in string format.
 
-8) Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
+8) Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. 
 
 ```
   <script type="text/javascript">
@@ -242,12 +242,14 @@ window.onload = function()
  <script>
   window.onload = function()
   {
-alert(document.URL);
+	alert(document.URL);
   }
   </script>
 
 ```
 *A Document object represents the HTML document that is displayed in that window. The Document object has various properties that refer to other objects which allow access to and modification of document content.
+
+
 
 
  
