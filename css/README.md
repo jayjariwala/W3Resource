@@ -10,5 +10,11 @@ solution in the file -> sticky footer
 
 Solution in the file -> stickedlook
 
-* The box-property is the main CSS proparty used to create this look. it accepts 5 values as a parameters. 1) margin-top 2) margin-left 3) shadow scattered 4) shadow exapansion 5) color of the shadow
+* The box-shadow property is the main CSS proparty used to create this look. it accepts 5 values as a parameters. 1) margin-top 2) margin-left 3) shadow scattered 4) shadow exapansion 5) color of the shadow
  
+4) create a ribbon
+
+5) give blurry text effect
+ 
+* to do blurry text effect, make the text color transparent and set text-shadow proparty.
+

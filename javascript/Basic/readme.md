@@ -195,7 +195,7 @@ window.onload = function()
 
 ```
 * Here Math.random number will generate random numbers between 0 to 1(exclusive).
-* Floor function will round off the number to its nearst integer.
+* Floor function will round off the number to its nearst lowest integer.
 * ceil will round off floating number to nearst interger.
 
 9)  Write a JavaScript program to calculate days left until next Christmas.
