@@ -16,5 +16,9 @@ Solution in the file -> stickedlook
 
 5) give blurry text effect
  
-* to do blurry text effect, make the text color transparent and set text-shadow proparty.
+* to do blurry text effect, make the text color transparent and se text-shadow proparty.
+
+6) make the first line and letter style difrrent color and diffrent size.
+-> we can use sudo selectors like p::first-line p::first-letter
+ 
 
