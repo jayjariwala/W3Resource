@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GITAR Center</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<script type="text/javascript" href="assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" href="assets/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+
+<div class="banner">	
+	<div class="ui_container">
+		<h1>Choose a Guitar</h1>
+		<div class="image_container">
+		</div>
+		<div class="select_buttons">
+			<button class=" btn btn-default btn1 previous">Prev</button><button class="next btn2 btn btn-default">Next</button>
+		</div>
+		<div class="spcifications_section">
+			<div class="product_container">
+				<button data-info="product_info" class="info btn btn-default btn-block" id="info">Product Info</button>
+				<div class="product_info">
+					
+				</div>
+			</div>
+			<div class="shipping_container">
+				<button data-info="shipping_info" class="shipping btn btn-default btn-block" id="info">Shipping info</button>
+				<div class="shipping_info">
+			
+				</div>
+			</div>
+			<div class="review_container">
+				<button data-info="review_info" class="review btn btn-default btn-block" id="info">Cust Review</button>
+				<div class="review_info">
+		
+				</div>
+			</div>
+		</div>
+		<button class="buy btn btn-block btn-default">Buy</button>
+		
+	</div>
+</div>
+<div class="footer"></div>
+<script type="text/javascript">
+var guitar_data;
+
+function renderData(count)
+{
+	console.log(document.querySelector('.image_container').innerHTML = `<img src="${guitar_data[count].image}"  class="img"  height = '150px;'>`);
+	document.querySelector('.product_info').innerHTML = 
+	`<h5>Name:<span class="Product_data">${guitar_data[count].product_info.name}</span></h5>
+					<h5>Weight:<span class="Product_data">${guitar_data[count].product_info.weight}</span></h5>
+					<h5>Price:<span class="Product_data">${guitar_data[count].product_info.price}</span></h5>`;
+	document.querySelector('.shipping_info').innerHTML = 
+	`<h5>Shipping Cost:<span class="Product_data">${guitar_data[count].shipping_info.cost}</span></h5>
+					<h5>Ships from:<span class="Product_data">${guitar_data[count].shipping_info.from}</span></h5>`;
+
+	function reviewRetriver()
+	{
+
+			
+	}
+	
+
+	 for(var i=0 ; i< guitar_data.length; i++){
+	 	if (guitar_data[count].Reviews[i] === undefined) {
+	 		break;
+	 	}
+	 	document.querySelector('.review_info').innerHTML += `<h5>${guitar_data[count].Reviews[i].name}: ${guitar_data[count].Reviews[i].comment} <h5>`;
+		
+		}
+	
+
+
+}
+
+
+function loadJSON(){
+        var data_file = "http://127.0.0.1:3000/data.json";
+        var http_request = new XMLHttpRequest();
+        try{
+           // Opera 8.0+, Firefox, Chrome, Safari
+           http_request = new XMLHttpRequest();
+        }catch (e){
+           // Internet Explorer Browsers
+           try{
+              http_request = new ActiveXObject("Msxml2.XMLHTTP");
+	
+           }catch (e) {
+
+              try{
+                 http_request = new ActiveXObject("Microsoft.XMLHTTP");
+              }catch (e){
+                 // Something went wrong
+                 alert("Your browser broke!");
+                 return false;
+              }
+	
+           }
+        }
+
+        http_request.onreadystatechange = function(){
+
+           if (http_request.readyState == 4  ){
+              // Javascript function JSON.parse to parse JSON data
+              guitar_data = JSON.parse(http_request.responseText);
+           		renderData(0);
+              
+
+           }
+        }
+
+        http_request.open("GET", data_file, true);
+        http_request.send();
+     }
+
+loadJSON();
+/*fetch('http://127.0.0.1:3000/data.json')
+.then(function(res){ return res.json() })
+.then(function (data){
+	guitar_data = data;
+});
+
+*/
+
+
+
+
+let count = 0;
+document.querySelector('.next').addEventListener('click', function(){		
+	document.querySelector('.review_info').innerHTML = "";
+	if (count === guitar_data.length - 1) {
+		count = 0;
+		renderData(count);
+
+	}
+	else {
+		count++;
+		renderData(count);
+		}	
+	
+});
+
+document.querySelector('.previous').addEventListener('click', function(){
+	document.querySelector('.review_info').innerHTML = "";
+	if (count === 0) {
+		count = guitar_data.length - 1;
+		renderData(count);
+	}
+	else {
+		count--;
+		renderData(count);
+		}	
+});
+
+document.querySelector('.buy').addEventListener('click', function(){
+	sessionStorage.setItem("image", ''+guitar_data[count].image);
+	sessionStorage.setItem("name", ''+guitar_data[count].product_info.name);
+	sessionStorage.setItem("price", ''+guitar_data[count].product_info.price);
+	sessionStorage.setItem("weight", ''+guitar_data[count].product_info.weight);
+	sessionStorage.setItem("shipping", ''+guitar_data[count].shipping_info.from);
+	
+	window.location ="/purchase.html" 
+
+});
+
+var infoButtons = document.querySelectorAll("#info");
+infoButtons.forEach(button => {
+	button.addEventListener("click",function(){
+	document.querySelector("."+this.getAttribute("data-info")).classList.toggle("info_toggle");
+		
+	})
+})
+</script>
+</body>
+</html>

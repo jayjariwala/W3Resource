@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GITAR Center</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<script type="text/javascript" href="assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" href="assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="banner">	
+	<div class="ui_container">
+		<div class="confirm-item well">
+		
+		</div>
+	
+		<button class="main_menu btn btn-block btn-default">main Menu</button>
+	</div>
+</div>
+<div class="footer"></div>
+
+<script type="text/javascript">
+document.querySelector(".confirm-item").innerHTML = `<img src="${sessionStorage.getItem("image")}" class="img"  height = '150px;'">
+<h4>Product Details</h4>
+<h5>Model:<span class="item_list">${sessionStorage.getItem("name")}</span> </h5>
+<h5>Price:<span class="item_list">${sessionStorage.getItem("price")}</span> </h5>
+<h5>Weight:<span class="item_list">${sessionStorage.getItem("weight")}</span> </h5>
+<h5>Ships from:<span class="item_list">${sessionStorage.getItem("shipping")}</span> </h5>
+<h4>Your Details</h4>
+<h5>First Name:<span class="item_list">${sessionStorage.getItem("val0")}</span> </h5>
+<h5>Last Name:<span class="item_list">${sessionStorage.getItem("val1")}</span> </h5>
+<h5>Email Address:<span class="item_list">${sessionStorage.getItem("val2")}</span> </h5>
+
+`
+
+document.querySelector(".main_menu").addEventListener("click",function()
+{
+	window.location ="/index.html" 
+})
+
+</script>
+</body>

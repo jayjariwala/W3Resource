@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GITAR Center</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<script type="text/javascript" href="assets/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" href="assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="banner">	
+	<div class="ui_container">
+		<div class="item_details">
+		</div>
+		<form>
+		<input type="text" class="form_data" data-input="firstname" placeholder="First Name"><br/>
+		<input type="text" class="form_data" data-input="lastname" placeholder="Last Name"><br/>
+		<input type="text" class="form_data" data-input="emailname" placeholder="Email">
+		</form>
+
+		<div class="Reciept_container well">
+			<h4>FirstName:</h4><span class="firstname" id="formval"></span>
+			<h4>Last Name:</h4><span class="lastname" id="formval"></span>
+			<h4>Email:</h4><span class="emailname" id="formval"></span>
+		</div>
+		<button class="buy btn btn-block btn-default">Buy</button>
+
+	</div>
+</div>
+<div class="footer"></div>
+
+<script type="text/javascript">
+
+console.log(document.querySelector(".item_details").innerHTML = `
+			<img src="${sessionStorage.getItem("image")}" class="img"  height = '150px;'>
+			<h4>Product Details<span class="item_detail"></span></h4>
+			<h5>Model:<span class="item_detail">${sessionStorage.getItem("name")}</h5>
+			<h5>Price:<span class="item_detail">${sessionStorage.getItem("price")}</h5>
+			<h5>Weight:<span class="item_detail">${sessionStorage.getItem("weight")}</h5>
+			<h5>Shipps from:<span class="item_detail">${sessionStorage.getItem("shipping")}</h5>`);
+let personal_detail = [];
+document.querySelectorAll(".form_data").forEach(input => {
+	input.addEventListener('keyup', function(){
+		document.querySelector("."+this.getAttribute("data-input")).innerText = this.value;
+
+		
+	});
+});
+
+var details = 0;
+document.querySelector(".buy").addEventListener("click",function(){
+	document.querySelectorAll(".Reciept_container #formval").forEach(val => {
+		sessionStorage.setItem("val"+details,val.innerText);
+		details++;
+	});
+
+	window.location ="/confirm.html" ;
+})
+
+
+console.log(personal_detail);
+</script>
+
+</body>
+</html>

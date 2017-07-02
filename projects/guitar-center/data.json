@@ -1,0 +1,27 @@
+[{
+	"image":"assets/image/Guitar1.png",
+	"product_info": { "name": "Epiphone DR-100 Acoustic Guitar", "weight":"40lb", "price":"$500" },
+	"shipping_info": { "cost" :"$20", "from" : "71 Pilgrim Avenue Chevy Chase, MD 20815" },
+	"Reviews" : [{"name" : "Suraj", "comment" : "Had a good time playing this guitar"},{"name" : "Rahul", "comment" : "Nice I give 5 stars"} ]
+},{
+	"image":"assets/image/Guitar2.png",
+	"product_info": { "name": "Gibson L-5", "weight":"45lb", "price":"$800" },
+	"shipping_info": { "cost" :"$10", "from" : "70 Bowman St. South Windsor, CT 06074" },
+	"Reviews" : [{"name" : "Jay", "comment" : "didn't like that much"},{"name" : "Rajan", "comment" : "It came broken"} ]
+},
+{
+	"image":"assets/image/Guitar3.png",
+	"product_info": { "name": "Martin D-45", "weight":"35lb", "price":"$1000" },
+	"shipping_info": { "cost" :"$5", "from" : "44 Shirley Ave. West Chicago, IL 60185514 S. Magnolia St."},
+	"Reviews" : [{"name" : "Sam", "comment" : "awesome"},{"name" : "lisa", "comment" : "worth money"} ]
+},{
+	"image":"assets/image/Guitar4.png",
+	"product_info": { "name": "Gibson Les Pau", "weight":"50lb", "price":"$650" },
+	"shipping_info": { "cost" :"$500", "from" : "4 Goldfield Rd. Honolulu, HI 96815" },
+	"Reviews" : [{"name" : "Juli", "comment" : "It is so cool"},{"name" : "mastan", "comment" : "bought it but donno how to play it"} ]
+},{
+	"image":"assets/image/Guitar5.png",
+	"product_info": { "name": "Smith Santana", "weight":"55lb", "price":"$450" },
+	"shipping_info": { "cost" :"Free", "from" : " 123 6th St. Melbourne, FL 32904" },
+	"Reviews" : [{"name" : "April", "comment" : "I bought it in April"},{"name" : "Ronaldo", "comment" : "just love it"} ]
+}]
